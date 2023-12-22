@@ -11,12 +11,12 @@ export const counterSlice = createSlice({
     reducers: {
         //actions are created inside this reducers key. (Actions are logics)
         //logic to update the data
-        increment: (state) => {
-            state.value = state.value + 1;
+        increment: (state, action) => {
+            state.value = state.value + action.payload;
 
         },
-        decrement: (state) => {
-            state.value = state.value - 1;
+        decrement: (state, action) => {
+            state.value = state.value - action.payload;
         },
         reset: (state) => {
             state.value = 0;
